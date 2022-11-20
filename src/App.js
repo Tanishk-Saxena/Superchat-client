@@ -71,7 +71,7 @@ function ChatRoom () {
   
   const messageRef = firestore.collection('messages');
   const query = messageRef.orderBy('createdAt').limit(25);
-  const [messages, loadingMessages, error] = useCollectionData(query, {idField: 'id'});
+  const [messages] = useCollectionData(query, {idField: 'id'});
   const [formValue, setFormValue] = useState('');
 
   const sendMessage = async (e) => {
